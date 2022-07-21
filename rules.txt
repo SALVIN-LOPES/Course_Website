@@ -1,0 +1,26 @@
+Objective -
+Create APIs for an online course portal where users can signup, login, view, and go through the course posted by different educators. You can consider all courses will be available for free.
+
+Application overview - 
+Users should be able to signup and see all the courses available from different educators. They should be able to enroll in the course and view course contents.
+Educators should be able to signup and create courses. They should also be able to view enrolled users for each course.
+A Course contains:
+Textual Content
+Quizzes (optional)
+
+Create APIs to
+Signup (user and educator)--> done
+Login (user and educator)--> done
+Create a course (nursery) (with image, name, description, and more if required)--> done
+List all courses (user)--> done
+View course information like name and description(user) --> done
+Enroll in a course (user) -- done
+course = {
+    "educator": "salvin",
+    "course_name":"djnago",
+    "description":"djago is the best course",
+    "users_enrolled": {
+        "salvin","ian",...
+    }
+}
+View enrolled users for a course (educator) --> not done

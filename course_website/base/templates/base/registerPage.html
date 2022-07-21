@@ -1,0 +1,52 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<div class="center">
+    <h1>Register</h1>
+    <form action="" method="POST">
+      {% csrf_token %}
+  
+      {% for field in form %}
+      <div class="txt_field">
+        <!-- <input type="text" placeholder="{{ field.label }}" value="{{ field }}" required /> -->
+        <label class = "{{field.label}}">{{ field.label }}</label>
+        {{ field }}
+      </div>
+      {% endfor %}
+
+      <!-- -----------------manual fields------------------ -->
+
+      <div class="options">
+        <div class="user">
+            <label for="#">User</label>
+            <input type="radio" name = "type" value="user" >
+        </div>
+        <div class="educator">
+            <label for="#">Educator</label>
+            <input type="radio" name = "type" value="educator" >
+        </div>
+        
+      </div>
+  
+      <div class="pass">Forgot Password?</div>
+      <input type="submit" value="Register" />
+      <div class="signup_link">
+        Already registered? <a href="{% url 'login' %}">SignIn</a>
+      </div>
+    </form>
+  </div>
+
+  <style>
+    .options {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+  </style>
+
+{% endblock %}
+
+

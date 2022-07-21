@@ -1,0 +1,35 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<div class="row">
+  {% for course in courses %}
+  <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">{{course.course_name}}</h5>
+        <h5 class="card-title"><h6>created by:</h6>{{course.educator}}</h5>
+        <br>
+        <!-- <p class="card-text">{{course.description}}</p>  -->
+        <a href="#" class="card-link">Enroll</a>
+        <a href="{% url 'course-detail' course.id %}" class="card-link">view more</a>
+      </div>
+    </div>
+  
+    {% endfor %}
+</div>
+
+
+  <style>
+    .card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 2rem;
+    margin-bottom: 2rem;
+  }
+  .card .card-body a{
+      text-decoration: none;
+
+  }
+  </style>
+
+{% endblock %}
